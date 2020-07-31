@@ -1,6 +1,6 @@
 // login.js
 import React from 'react'
-
+import { fetch } from '@utils'
 function Login () {
   const [
     state,
@@ -16,31 +16,23 @@ function Login () {
     const { usernameInput, passwordInput } = event.target.elements
 
     setState({ loading: true, resolved: false, error: null })
-
-    window
-      .fetch('/api/login', {
+    fetch({
+      url: '/api/login',
+      option: {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          username: usernameInput.value,
-          password: passwordInput.value,
-        }),
-      })
-      .then((r) => {
-        console.log(r)
-        return r.json()
-      })
-      .then(
-        (user) => {
-          console.log(user)
-          setState({ loading: false, resolved: true, error: null })
-          window.localStorage.setItem('token', user.token)
-        },
-        (error) => {
-          console.log(error)
-          setState({ loading: false, resolved: false, error: error.message })
-        },
-      )
+      },
+      payload: {
+        username: usernameInput.value,
+        password: passwordInput.value,
+      },
+      onSuccess: (user) => {
+        setState({ loading: false, resolved: true, error: null })
+        window.localStorage.setItem('token', user.token)
+      },
+      onError: (error) => {
+        setState({ loading: false, resolved: false, error: error.message })
+      },
+    })
   }
 
   return (

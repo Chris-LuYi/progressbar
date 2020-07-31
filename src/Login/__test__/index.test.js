@@ -26,6 +26,7 @@ test('allows the user to login successfully', async () => {
   fireEvent.change(screen.getByLabelText(/username/i), {
     target: { value: 'chuck' },
   })
+
   fireEvent.change(screen.getByLabelText(/password/i), {
     target: { value: 'norris' },
   })

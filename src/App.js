@@ -9,26 +9,24 @@ import { setupServer } from 'msw/node'
 import Bar from './Bar'
 import Login from './Login'
 
+if (process.env.NODE_ENV === 'development') {
+  console.log(handlers)
+  const worker = setupWorker(...handlers)
+  console.log(worker)
+  worker.start()
+  // worker.resetHandlers()
+  worker.use(
+    rest.post('/api/login', (req, res, ctx) => {
+      // console.log({ req, res, ctx })
+      return res(
+        ctx.status(500),
+        ctx.json({ message: 'Internal server error 123' }),
+      )
+    }),
+  )
+}
 function App () {
-  useEffect(() => {
-    console.log(1)
-    if (process.env.NODE_ENV === 'development') {
-      console.log(handlers)
-      const worker = setupWorker(...handlers)
-      console.log(worker)
-      worker.start()
-      // worker.resetHandlers()
-      // worker.use(
-      //   rest.post('/api/login', (req, res, ctx) => {
-      //     // console.log({ req, res, ctx })
-      //     return res(
-      //       // ctx.status(500),
-      //       ctx.json({ message: 'Internal server error' }),
-      //     )
-      //   }),
-      // )
-    }
-  }, [])
+  useEffect(() => {}, [])
   return (
     <div className='App'>
       <header className='App-header'>
