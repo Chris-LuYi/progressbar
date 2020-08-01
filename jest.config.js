@@ -33,6 +33,8 @@ module.exports = {
     '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
     '^@test/(.*)$': '<rootDir>/src/test/$1',
     '^@utils(.*)$': '<rootDir>/src/utils$1',
+    '^@pages(.*)$': '<rootDir>/src/pages$1',
+    '^@components(.*)$': '<rootDir>/src/components$1',
   },
   moduleFileExtensions: [
     'web.js',

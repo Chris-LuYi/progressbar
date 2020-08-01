@@ -13,12 +13,10 @@ export const fetch = ({ url, option, payload, onSuccess, onError }) => {
 
       throw error
     })
-    .then(
-      (r) => {
-        if (onSuccess) onSuccess(r)
-      },
-      (error) => {
-        if (onError) onError(error)
-      },
-    )
+    .then((r) => {
+      if (onSuccess) onSuccess(r)
+    })
+    .catch((error) => {
+      if (onError) onError(error)
+    })
 }

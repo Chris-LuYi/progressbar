@@ -301,6 +301,8 @@ module.exports = function (webpackEnv) {
         ...(modules.webpackAliases || {}),
         '@utils': path.resolve(__dirname, '../src/utils/'),
         '@test': path.resolve(__dirname, '../src/test/'),
+        '@pages': path.resolve(__dirname, '../src/pages/'),
+        '@components': path.resolve(__dirname, '../src/components/'),
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding
