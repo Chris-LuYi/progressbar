@@ -10,6 +10,8 @@ Other technologies used
 
 run `npm i` to install dependency
 
+<img src='https://github.com/RequiemSoul/progressbar/blob/master/public/demo.gif'/>
+
 ## Available Scripts
 
 In the project directory, you can run:
