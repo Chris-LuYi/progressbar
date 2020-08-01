@@ -8,6 +8,8 @@ Other technologies used
 
 -Testing: jest and react-testing-library
 
+run `npm i` to install dependency
+
 ## Available Scripts
 
 In the project directory, you can run:
