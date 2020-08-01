@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
+
 Other technologies used
+
 -UI: material-ui 
 
 -Data Management: redux
