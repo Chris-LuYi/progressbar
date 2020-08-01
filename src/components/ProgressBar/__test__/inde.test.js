@@ -56,7 +56,6 @@ test('button click check current bar value', async () => {
   const buttons = screen.getAllByTitle('button')
   const { initialState: { progressbar } } = renderOptions
   const { current, bars, buttons: btns } = progressbar
-  debug(buttons[0])
   const bar = screen.getAllByTestId('bar')[current]
   expect(bar).toHaveTextContent(bars[current] + '%')
 

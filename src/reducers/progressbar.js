@@ -3,7 +3,7 @@ const todos = (
     buttons: [],
     bars: [],
     limit: 100,
-    current: 0,
+    current: undefined,
   },
   action,
 ) => {

@@ -29,7 +29,10 @@ const ProgressBarPage = ({
         onSuccess: (r) => {
           dispatch({
             type: 'UPDATE_STATE',
-            payload: r,
+            payload: {
+              ...r,
+              current: 0,
+            },
           })
           setDataLoaded(true)
         },
